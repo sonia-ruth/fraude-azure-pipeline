@@ -61,6 +61,8 @@ Décisions et difficultés : [...]
 
 ### Semaine 2 : ingestion
 - [ ] Pipeline Data Factory
+      Volume de données transféré: 6 362 620 lignes
+      temps d'exécution: 00:04:21
 - [ ] Couches brute et nettoyée
 - [ ] 5 contrôles de qualité et journal des rejets
 
