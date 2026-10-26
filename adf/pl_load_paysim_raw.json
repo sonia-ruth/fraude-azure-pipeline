@@ -216,6 +216,33 @@
                         "type": "DatasetReference"
                     }
                 ]
+            },
+            {
+                "name": "usp_load_transactions",
+                "type": "SqlServerStoredProcedure",
+                "dependsOn": [
+                    {
+                        "activity": "copy_paysim_to_raw",
+                        "dependencyConditions": [
+                            "Completed"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "storedProcedureName": "[clean].[usp_load_transactions]"
+                },
+                "linkedServiceName": {
+                    "referenceName": "ls_sql_fraude",
+                    "type": "LinkedServiceReference"
+                }
             }
         ],
         "annotations": []
